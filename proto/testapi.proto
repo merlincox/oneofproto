@@ -1,0 +1,522 @@
+syntax = "proto3";
+
+package testapi;
+
+option go_package = "github.com/merlincox/onefproto/testapi";
+
+// TestService for testing onefproto.ToStructpb
+service TestService {
+  rpc Test(TestRequest) returns (TestResponse);
+}
+
+message TestRequest {
+  TestProto test = 1;
+}
+
+message TestResponse {}
+
+message TestProto {
+  string uuid = 1;
+  oneof data {
+    Assignable1 assignable1 = 2;
+    Assignable2 assignable2 = 3;
+    Assignable3 assignable3 = 4;
+    Assignable4 assignable4 = 5;
+    Assignable5 assignable5 = 6;
+    Assignable6 assignable6 = 7;
+    Assignable7 assignable7 = 8;
+    Assignable8 assignable8 = 9;
+    Assignable9 assignable9 = 10;
+    Assignable10 assignable10 = 11;
+    Assignable11 assignable11 = 12;
+    Assignable12 assignable12 = 13;
+    Assignable13 assignable13 = 14;
+    Assignable14 assignable14 = 15;
+    Assignable15 assignable15 = 16;
+    Assignable16 assignable16 = 17;
+    Assignable17 assignable17 = 18;
+    Assignable18 assignable18 = 19;
+    Assignable19 assignable19 = 20;
+    Assignable20 assignable20 = 21;
+    Assignable21 assignable21 = 22;
+    Assignable22 assignable22 = 23;
+    Assignable23 assignable23 = 24;
+    Assignable24 assignable24 = 25;
+    Assignable25 assignable25 = 26;
+    Assignable26 assignable26 = 27;
+    Assignable27 assignable27 = 28;
+    Assignable28 assignable28 = 29;
+    Assignable29 assignable29 = 30;
+    Assignable30 assignable30 = 31;
+    Assignable31 assignable31 = 32;
+    Assignable32 assignable32 = 33;
+    Assignable33 assignable33 = 34;
+    Assignable34 assignable34 = 35;
+    Assignable35 assignable35 = 36;
+    Assignable36 assignable36 = 37;
+    Assignable37 assignable37 = 38;
+    Assignable38 assignable38 = 39;
+    Assignable39 assignable39 = 40;
+    Assignable40 assignable40 = 41;
+    Assignable41 assignable41 = 42;
+    Assignable42 assignable42 = 43;
+    Assignable43 assignable43 = 44;
+    Assignable44 assignable44 = 45;
+    Assignable45 assignable45 = 46;
+    Assignable46 assignable46 = 47;
+    Assignable47 assignable47 = 48;
+    Assignable48 assignable48 = 49;
+    Assignable49 assignable49 = 50;
+    Assignable50 assignable50 = 51;
+    Assignable51 assignable51 = 52;
+    Assignable52 assignable52 = 53;
+    Assignable53 assignable53 = 54;
+    Assignable54 assignable54 = 55;
+    Assignable55 assignable55 = 56;
+    Assignable56 assignable56 = 57;
+    Assignable57 assignable57 = 58;
+    Assignable58 assignable58 = 59;
+    Assignable59 assignable59 = 60;
+    Assignable60 assignable60 = 61;
+    Assignable61 assignable61 = 62;
+    Assignable62 assignable62 = 63;
+    Assignable63 assignable63 = 64;
+    Assignable64 assignable64 = 65;
+    Assignable65 assignable65 = 66;
+    Assignable66 assignable66 = 67;
+    Assignable67 assignable67 = 68;
+    Assignable68 assignable68 = 69;
+    Assignable69 assignable69 = 70;
+    Assignable70 assignable70 = 71;
+    Assignable71 assignable71 = 72;
+    Assignable72 assignable72 = 73;
+    Assignable73 assignable73 = 74;
+    Assignable74 assignable74 = 75;
+    Assignable75 assignable75 = 76;
+    Assignable76 assignable76 = 77;
+    Assignable77 assignable77 = 78;
+    Assignable78 assignable78 = 79;
+    Assignable79 assignable79 = 80;
+    Assignable80 assignable80 = 81;
+    Assignable81 assignable81 = 82;
+    Assignable82 assignable82 = 83;
+    Assignable83 assignable83 = 84;
+    Assignable84 assignable84 = 85;
+    Assignable85 assignable85 = 86;
+    Assignable86 assignable86 = 87;
+    Assignable87 assignable87 = 88;
+    Assignable88 assignable88 = 89;
+    Assignable89 assignable89 = 90;
+    Assignable90 assignable90 = 91;
+    Assignable91 assignable91 = 92;
+    Assignable92 assignable92 = 93;
+    Assignable93 assignable93 = 94;
+    Assignable94 assignable94 = 95;
+    Assignable95 assignable95 = 96;
+    Assignable96 assignable96 = 97;
+    Assignable97 assignable97 = 98;
+    Assignable98 assignable98 = 99;
+    Assignable99 assignable99 = 100;
+    Assignable100 assignable100 = 101;
+  }
+}
+
+message Assignable1 {
+  string data1 = 1;
+}
+
+message Assignable2 {
+  string data2 = 1;
+}
+
+message Assignable3 {
+  string data3 = 1;
+}
+
+message Assignable4 {
+  string data4 = 1;
+}
+
+message Assignable5 {
+  string data5 = 1;
+}
+
+message Assignable6 {
+  string data6 = 1;
+}
+
+message Assignable7 {
+  string data7 = 1;
+}
+
+message Assignable8 {
+  string data8 = 1;
+}
+
+message Assignable9 {
+  string data9 = 1;
+}
+
+message Assignable10 {
+  string data10 = 1;
+}
+
+message Assignable11 {
+  string data11 = 1;
+}
+
+message Assignable12 {
+  string data12 = 1;
+}
+
+message Assignable13 {
+  string data13 = 1;
+}
+
+message Assignable14 {
+  string data14 = 1;
+}
+
+message Assignable15 {
+  string data15 = 1;
+}
+
+message Assignable16 {
+  string data16 = 1;
+}
+
+message Assignable17 {
+  string data17 = 1;
+}
+
+message Assignable18 {
+  string data18 = 1;
+}
+
+message Assignable19 {
+  string data19 = 1;
+}
+
+message Assignable20 {
+  string data20 = 1;
+}
+
+message Assignable21 {
+  string data21 = 1;
+}
+
+message Assignable22 {
+  string data22 = 1;
+}
+
+message Assignable23 {
+  string data23 = 1;
+}
+
+message Assignable24 {
+  string data24 = 1;
+}
+
+message Assignable25 {
+  string data25 = 1;
+}
+
+message Assignable26 {
+  string data26 = 1;
+}
+
+message Assignable27 {
+  string data27 = 1;
+}
+
+message Assignable28 {
+  string data28 = 1;
+}
+
+message Assignable29 {
+  string data29 = 1;
+}
+
+message Assignable30 {
+  string data30 = 1;
+}
+
+message Assignable31 {
+  string data31 = 1;
+}
+
+message Assignable32 {
+  string data32 = 1;
+}
+
+message Assignable33 {
+  string data33 = 1;
+}
+
+message Assignable34 {
+  string data34 = 1;
+}
+
+message Assignable35 {
+  string data35 = 1;
+}
+
+message Assignable36 {
+  string data36 = 1;
+}
+
+message Assignable37 {
+  string data37 = 1;
+}
+
+message Assignable38 {
+  string data38 = 1;
+}
+
+message Assignable39 {
+  string data39 = 1;
+}
+
+message Assignable40 {
+  string data40 = 1;
+}
+
+message Assignable41 {
+  string data41 = 1;
+}
+
+message Assignable42 {
+  string data42 = 1;
+}
+
+message Assignable43 {
+  string data43 = 1;
+}
+
+message Assignable44 {
+  string data44 = 1;
+}
+
+message Assignable45 {
+  string data45 = 1;
+}
+
+message Assignable46 {
+  string data46 = 1;
+}
+
+message Assignable47 {
+  string data47 = 1;
+}
+
+message Assignable48 {
+  string data48 = 1;
+}
+
+message Assignable49 {
+  string data49 = 1;
+}
+
+message Assignable50 {
+  string data50 = 1;
+}
+
+message Assignable51 {
+  string data51 = 1;
+}
+
+message Assignable52 {
+  string data52 = 1;
+}
+
+message Assignable53 {
+  string data53 = 1;
+}
+
+message Assignable54 {
+  string data54 = 1;
+}
+
+message Assignable55 {
+  string data55 = 1;
+}
+
+message Assignable56 {
+  string data56 = 1;
+}
+
+message Assignable57 {
+  string data57 = 1;
+}
+
+message Assignable58 {
+  string data58 = 1;
+}
+
+message Assignable59 {
+  string data59 = 1;
+}
+
+message Assignable60 {
+  string data60 = 1;
+}
+
+message Assignable61 {
+  string data61 = 1;
+}
+
+message Assignable62 {
+  string data62 = 1;
+}
+
+message Assignable63 {
+  string data63 = 1;
+}
+
+message Assignable64 {
+  string data64 = 1;
+}
+
+message Assignable65 {
+  string data65 = 1;
+}
+
+message Assignable66 {
+  string data66 = 1;
+}
+
+message Assignable67 {
+  string data67 = 1;
+}
+
+message Assignable68 {
+  string data68 = 1;
+}
+
+message Assignable69 {
+  string data69 = 1;
+}
+
+message Assignable70 {
+  string data70 = 1;
+}
+
+message Assignable71 {
+  string data71 = 1;
+}
+
+message Assignable72 {
+  string data72 = 1;
+}
+
+message Assignable73 {
+  string data73 = 1;
+}
+
+message Assignable74 {
+  string data74 = 1;
+}
+
+message Assignable75 {
+  string data75 = 1;
+}
+
+message Assignable76 {
+  string data76 = 1;
+}
+
+message Assignable77 {
+  string data77 = 1;
+}
+
+message Assignable78 {
+  string data78 = 1;
+}
+
+message Assignable79 {
+  string data79 = 1;
+}
+
+message Assignable80 {
+  string data80 = 1;
+}
+
+message Assignable81 {
+  string data81 = 1;
+}
+
+message Assignable82 {
+  string data82 = 1;
+}
+
+message Assignable83 {
+  string data83 = 1;
+}
+
+message Assignable84 {
+  string data84 = 1;
+}
+
+message Assignable85 {
+  string data85 = 1;
+}
+
+message Assignable86 {
+  string data86 = 1;
+}
+
+message Assignable87 {
+  string data87 = 1;
+}
+
+message Assignable88 {
+  string data88 = 1;
+}
+
+message Assignable89 {
+  string data89 = 1;
+}
+
+message Assignable90 {
+  string data90 = 1;
+}
+
+message Assignable91 {
+  string data91 = 1;
+}
+
+message Assignable92 {
+  string data92 = 1;
+}
+
+message Assignable93 {
+  string data93 = 1;
+}
+
+message Assignable94 {
+  string data94 = 1;
+}
+
+message Assignable95 {
+  string data95 = 1;
+}
+
+message Assignable96 {
+  string data96 = 1;
+}
+
+message Assignable97 {
+  string data97 = 1;
+}
+
+message Assignable98 {
+  string data98 = 1;
+}
+
+message Assignable99 {
+  string data99 = 1;
+}
+
+message Assignable100 {
+  string data100 = 1;
+}
