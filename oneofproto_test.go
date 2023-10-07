@@ -28,7 +28,7 @@ func funcTest(t *testing.T, fn oneofFunc) {
 	assert.Nil(t, err, "should not error")
 	assert.Equal(t, "*testapi.Assignable100", name, "should output correct type name")
 	output, _ := out.MarshalJSON()
-	assert.Equal(t, input, output, "should output compatible structpb")
+	assert.Equal(t, input, output, "should output a JSON compatible structpb")
 }
 
 func funcBenchmark(b *testing.B, fn oneofFunc) {

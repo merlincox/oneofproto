@@ -6,3 +6,8 @@ bench:
 
 lint:
 	golangci-lint run
+
+godoc:
+	godoc -http=:6060
+
+

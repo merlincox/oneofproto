@@ -8,6 +8,7 @@ import (
 	"google.golang.org/protobuf/types/known/structpb"
 )
 
+// ToStructpbDefer mirrors the functionality of ToStructpb but uses a panic-recovery mechanism instead of kind checking.
 func ToStructpbDefer(oneof any) (protostruct *structpb.Struct, typeName string, err error) {
 	defer func() {
 		if r := recover(); r != nil {
@@ -18,6 +19,7 @@ func ToStructpbDefer(oneof any) (protostruct *structpb.Struct, typeName string, 
 	return ToStructpbUnsafe(oneof)
 }
 
+// ToStructpbUnsafe mirrors the functionality of ToStructpb but uses no kind checks or recovery, so is unsafe.
 func ToStructpbUnsafe(oneof any) (protostruct *structpb.Struct, typeName string, err error) {
 	val := reflect.ValueOf(oneof).Elem().Field(0)
 	typeName = val.Type().String()
