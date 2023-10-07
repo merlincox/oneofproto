@@ -113,7 +113,7 @@ const (
 	testapiAssignable100 = "*testapi.Assignable100"
 )
 
-func ToStructpb(oneof any) (protostruct *structpb.Struct, typeName string, err error) {
+func ToStructpb100(oneof any) (protostruct *structpb.Struct, typeName string, err error) {
 
 	switch assignable := oneof.(type) {
 	case *testapi.TestProto_Assignable1:
@@ -416,6 +416,20 @@ func ToStructpb(oneof any) (protostruct *structpb.Struct, typeName string, err e
 	case *testapi.TestProto_Assignable100:
 		protostruct, err = messageToStructpb(assignable.Assignable100)
 		typeName = testapiAssignable100
+	default:
+		err = fmt.Errorf("unsupported type")
+		return
+	}
+
+	return
+}
+
+func ToStructpb1(oneof any) (protostruct *structpb.Struct, typeName string, err error) {
+
+	switch assignable := oneof.(type) {
+	case *testapi.Test2Proto_Assignable1:
+		protostruct, err = messageToStructpb(assignable.Assignable1)
+		typeName = testapiAssignable1
 	default:
 		err = fmt.Errorf("unsupported type")
 		return

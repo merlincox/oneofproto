@@ -7,6 +7,7 @@ option go_package = "github.com/merlincox/onefproto/testapi";
 // TestService for testing onefproto.ToStructpb
 service TestService {
   rpc Test(TestRequest) returns (TestResponse);
+  rpc Test2(Test2Request) returns (Test2Response);
 }
 
 message TestRequest {
@@ -519,4 +520,17 @@ message Assignable99 {
 
 message Assignable100 {
   string data100 = 1;
+}
+
+message Test2Request {
+  Test2Proto test = 1;
+}
+
+message Test2Response {}
+
+message Test2Proto {
+  string uuid = 1;
+  oneof data {
+    Assignable1 assignable1 = 2;
+  }
 }

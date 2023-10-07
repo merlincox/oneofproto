@@ -6266,6 +6266,166 @@ func (x *Assignable100) GetData100() string {
 	return ""
 }
 
+type Test2Request struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Test *Test2Proto `protobuf:"bytes,1,opt,name=test,proto3" json:"test,omitempty"`
+}
+
+func (x *Test2Request) Reset() {
+	*x = Test2Request{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_testapi_proto_msgTypes[103]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Test2Request) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Test2Request) ProtoMessage() {}
+
+func (x *Test2Request) ProtoReflect() protoreflect.Message {
+	mi := &file_testapi_proto_msgTypes[103]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Test2Request.ProtoReflect.Descriptor instead.
+func (*Test2Request) Descriptor() ([]byte, []int) {
+	return file_testapi_proto_rawDescGZIP(), []int{103}
+}
+
+func (x *Test2Request) GetTest() *Test2Proto {
+	if x != nil {
+		return x.Test
+	}
+	return nil
+}
+
+type Test2Response struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *Test2Response) Reset() {
+	*x = Test2Response{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_testapi_proto_msgTypes[104]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Test2Response) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Test2Response) ProtoMessage() {}
+
+func (x *Test2Response) ProtoReflect() protoreflect.Message {
+	mi := &file_testapi_proto_msgTypes[104]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Test2Response.ProtoReflect.Descriptor instead.
+func (*Test2Response) Descriptor() ([]byte, []int) {
+	return file_testapi_proto_rawDescGZIP(), []int{104}
+}
+
+type Test2Proto struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Uuid string `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	// Types that are assignable to Data:
+	//
+	//	*Test2Proto_Assignable1
+	Data isTest2Proto_Data `protobuf_oneof:"data"`
+}
+
+func (x *Test2Proto) Reset() {
+	*x = Test2Proto{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_testapi_proto_msgTypes[105]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Test2Proto) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Test2Proto) ProtoMessage() {}
+
+func (x *Test2Proto) ProtoReflect() protoreflect.Message {
+	mi := &file_testapi_proto_msgTypes[105]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Test2Proto.ProtoReflect.Descriptor instead.
+func (*Test2Proto) Descriptor() ([]byte, []int) {
+	return file_testapi_proto_rawDescGZIP(), []int{105}
+}
+
+func (x *Test2Proto) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
+func (m *Test2Proto) GetData() isTest2Proto_Data {
+	if m != nil {
+		return m.Data
+	}
+	return nil
+}
+
+func (x *Test2Proto) GetAssignable1() *Assignable1 {
+	if x, ok := x.GetData().(*Test2Proto_Assignable1); ok {
+		return x.Assignable1
+	}
+	return nil
+}
+
+type isTest2Proto_Data interface {
+	isTest2Proto_Data()
+}
+
+type Test2Proto_Assignable1 struct {
+	Assignable1 *Assignable1 `protobuf:"bytes,2,opt,name=assignable1,proto3,oneof"`
+}
+
+func (*Test2Proto_Assignable1) isTest2Proto_Data() {}
+
 var File_testapi_proto protoreflect.FileDescriptor
 
 var file_testapi_proto_rawDesc = []byte{
@@ -6905,15 +7065,26 @@ var file_testapi_proto_rawDesc = []byte{
 	0x74, 0x61, 0x39, 0x39, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x64, 0x61, 0x74, 0x61,
 	0x39, 0x39, 0x22, 0x29, 0x0a, 0x0d, 0x41, 0x73, 0x73, 0x69, 0x67, 0x6e, 0x61, 0x62, 0x6c, 0x65,
 	0x31, 0x30, 0x30, 0x12, 0x18, 0x0a, 0x07, 0x64, 0x61, 0x74, 0x61, 0x31, 0x30, 0x30, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x64, 0x61, 0x74, 0x61, 0x31, 0x30, 0x30, 0x32, 0x42, 0x0a,
-	0x0b, 0x54, 0x65, 0x73, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x33, 0x0a, 0x04,
-	0x54, 0x65, 0x73, 0x74, 0x12, 0x14, 0x2e, 0x74, 0x65, 0x73, 0x74, 0x61, 0x70, 0x69, 0x2e, 0x54,
-	0x65, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x15, 0x2e, 0x74, 0x65, 0x73,
-	0x74, 0x61, 0x70, 0x69, 0x2e, 0x54, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x42, 0x28, 0x5a, 0x26, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
-	0x6d, 0x65, 0x72, 0x6c, 0x69, 0x6e, 0x63, 0x6f, 0x78, 0x2f, 0x6f, 0x6e, 0x65, 0x66, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x2f, 0x74, 0x65, 0x73, 0x74, 0x61, 0x70, 0x69, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x64, 0x61, 0x74, 0x61, 0x31, 0x30, 0x30, 0x22, 0x37, 0x0a,
+	0x0c, 0x54, 0x65, 0x73, 0x74, 0x32, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x27, 0x0a,
+	0x04, 0x74, 0x65, 0x73, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x74, 0x65,
+	0x73, 0x74, 0x61, 0x70, 0x69, 0x2e, 0x54, 0x65, 0x73, 0x74, 0x32, 0x50, 0x72, 0x6f, 0x74, 0x6f,
+	0x52, 0x04, 0x74, 0x65, 0x73, 0x74, 0x22, 0x0f, 0x0a, 0x0d, 0x54, 0x65, 0x73, 0x74, 0x32, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x62, 0x0a, 0x0a, 0x54, 0x65, 0x73, 0x74, 0x32,
+	0x50, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x12, 0x38, 0x0a, 0x0b, 0x61, 0x73, 0x73,
+	0x69, 0x67, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x31, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14,
+	0x2e, 0x74, 0x65, 0x73, 0x74, 0x61, 0x70, 0x69, 0x2e, 0x41, 0x73, 0x73, 0x69, 0x67, 0x6e, 0x61,
+	0x62, 0x6c, 0x65, 0x31, 0x48, 0x00, 0x52, 0x0b, 0x61, 0x73, 0x73, 0x69, 0x67, 0x6e, 0x61, 0x62,
+	0x6c, 0x65, 0x31, 0x42, 0x06, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x61, 0x32, 0x42, 0x0a, 0x0b, 0x54,
+	0x65, 0x73, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x33, 0x0a, 0x04, 0x54, 0x65,
+	0x73, 0x74, 0x12, 0x14, 0x2e, 0x74, 0x65, 0x73, 0x74, 0x61, 0x70, 0x69, 0x2e, 0x54, 0x65, 0x73,
+	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x15, 0x2e, 0x74, 0x65, 0x73, 0x74, 0x61,
+	0x70, 0x69, 0x2e, 0x54, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42,
+	0x28, 0x5a, 0x26, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65,
+	0x72, 0x6c, 0x69, 0x6e, 0x63, 0x6f, 0x78, 0x2f, 0x6f, 0x6e, 0x65, 0x66, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x2f, 0x74, 0x65, 0x73, 0x74, 0x61, 0x70, 0x69, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x33,
 }
 
 var (
@@ -6928,7 +7099,7 @@ func file_testapi_proto_rawDescGZIP() []byte {
 	return file_testapi_proto_rawDescData
 }
 
-var file_testapi_proto_msgTypes = make([]protoimpl.MessageInfo, 103)
+var file_testapi_proto_msgTypes = make([]protoimpl.MessageInfo, 106)
 var file_testapi_proto_goTypes = []interface{}{
 	(*TestRequest)(nil),   // 0: testapi.TestRequest
 	(*TestResponse)(nil),  // 1: testapi.TestResponse
@@ -7033,6 +7204,9 @@ var file_testapi_proto_goTypes = []interface{}{
 	(*Assignable98)(nil),  // 100: testapi.Assignable98
 	(*Assignable99)(nil),  // 101: testapi.Assignable99
 	(*Assignable100)(nil), // 102: testapi.Assignable100
+	(*Test2Request)(nil),  // 103: testapi.Test2Request
+	(*Test2Response)(nil), // 104: testapi.Test2Response
+	(*Test2Proto)(nil),    // 105: testapi.Test2Proto
 }
 var file_testapi_proto_depIdxs = []int32{
 	2,   // 0: testapi.TestRequest.test:type_name -> testapi.TestProto
@@ -7136,13 +7310,15 @@ var file_testapi_proto_depIdxs = []int32{
 	100, // 98: testapi.TestProto.assignable98:type_name -> testapi.Assignable98
 	101, // 99: testapi.TestProto.assignable99:type_name -> testapi.Assignable99
 	102, // 100: testapi.TestProto.assignable100:type_name -> testapi.Assignable100
-	0,   // 101: testapi.TestService.Test:input_type -> testapi.TestRequest
-	1,   // 102: testapi.TestService.Test:output_type -> testapi.TestResponse
-	102, // [102:103] is the sub-list for method output_type
-	101, // [101:102] is the sub-list for method input_type
-	101, // [101:101] is the sub-list for extension type_name
-	101, // [101:101] is the sub-list for extension extendee
-	0,   // [0:101] is the sub-list for field type_name
+	105, // 101: testapi.Test2Request.test:type_name -> testapi.Test2Proto
+	3,   // 102: testapi.Test2Proto.assignable1:type_name -> testapi.Assignable1
+	0,   // 103: testapi.TestService.Test:input_type -> testapi.TestRequest
+	1,   // 104: testapi.TestService.Test:output_type -> testapi.TestResponse
+	104, // [104:105] is the sub-list for method output_type
+	103, // [103:104] is the sub-list for method input_type
+	103, // [103:103] is the sub-list for extension type_name
+	103, // [103:103] is the sub-list for extension extendee
+	0,   // [0:103] is the sub-list for field type_name
 }
 
 func init() { file_testapi_proto_init() }
@@ -8387,6 +8563,42 @@ func file_testapi_proto_init() {
 				return nil
 			}
 		}
+		file_testapi_proto_msgTypes[103].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Test2Request); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_testapi_proto_msgTypes[104].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Test2Response); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_testapi_proto_msgTypes[105].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Test2Proto); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	file_testapi_proto_msgTypes[2].OneofWrappers = []interface{}{
 		(*TestProto_Assignable1)(nil),
@@ -8490,13 +8702,16 @@ func file_testapi_proto_init() {
 		(*TestProto_Assignable99)(nil),
 		(*TestProto_Assignable100)(nil),
 	}
+	file_testapi_proto_msgTypes[105].OneofWrappers = []interface{}{
+		(*Test2Proto_Assignable1)(nil),
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_testapi_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   103,
+			NumMessages:   106,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

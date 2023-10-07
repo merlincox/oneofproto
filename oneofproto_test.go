@@ -14,7 +14,7 @@ import (
 
 type oneofFunc func(oneof any) (protostruct *structpb.Struct, typeName string, err error)
 
-func funcTest(t *testing.T, fn oneofFunc) {
+func funcTest100(t *testing.T, fn oneofFunc) {
 	assignable := testapi.Assignable100{Data100: "test100"}
 	input, _ := json.Marshal(&assignable)
 	msg := &testapi.TestRequest{
@@ -31,7 +31,24 @@ func funcTest(t *testing.T, fn oneofFunc) {
 	assert.Equal(t, input, output, "should output a JSON compatible structpb")
 }
 
-func funcBenchmark(b *testing.B, fn oneofFunc) {
+func funcTest1(t *testing.T, fn oneofFunc) {
+	assignable := testapi.Assignable1{Data1: "test100"}
+	input, _ := json.Marshal(&assignable)
+	msg := &testapi.Test2Request{
+		Test: &testapi.Test2Proto{
+			Uuid: "uuid",
+			Data: &testapi.Test2Proto_Assignable1{Assignable1: &assignable},
+		},
+	}
+
+	out, name, err := fn(msg.Test.Data)
+	assert.Nil(t, err, "should not error")
+	assert.Equal(t, "*testapi.Assignable100", name, "should output correct type name")
+	output, _ := out.MarshalJSON()
+	assert.Equal(t, input, output, "should output a JSON compatible structpb")
+}
+
+func funcBenchmark100(b *testing.B, fn oneofFunc) {
 	for i := 0; i < b.N; i++ {
 		assignable := testapi.Assignable100{Data100: "test100"}
 		msg := &testapi.TestRequest{
@@ -48,34 +65,67 @@ func funcBenchmark(b *testing.B, fn oneofFunc) {
 	}
 }
 
-func TestToStructpb(t *testing.T) {
-	funcTest(t, oneofproto.ToStructpb)
+func funcBenchmark1(b *testing.B, fn oneofFunc) {
+	for i := 0; i < b.N; i++ {
+		assignable := testapi.Assignable1{Data1: "test1"}
+		msg := &testapi.Test2Request{
+			Test: &testapi.Test2Proto{
+				Uuid: "uuid",
+				Data: &testapi.Test2Proto_Assignable1{Assignable1: &assignable},
+			},
+		}
+
+		_, _, err := fn(msg.Test.Data)
+		if err != nil {
+			b.FailNow()
+		}
+	}
 }
 
-func TestToStructpbDefer(t *testing.T) {
-	funcTest(t, oneofproto.ToStructpbDefer)
+func TestToStructpb100(t *testing.T) {
+	funcTest100(t, oneofproto.ToStructpb)
 }
 
-func TestToStructpbUnsafe(t *testing.T) {
-	funcTest(t, oneofproto.ToStructpbUnsafe)
+func TestToStructpbDefer100(t *testing.T) {
+	funcTest100(t, oneofproto.ToStructpbDefer)
 }
 
-func TestSwitched(t *testing.T) {
-	funcTest(t, switched.ToStructpb)
+func TestToStructpbUnsafe100(t *testing.T) {
+	funcTest100(t, oneofproto.ToStructpbUnsafe)
 }
 
-func BenchmarkToStructpb(b *testing.B) {
-	funcBenchmark(b, oneofproto.ToStructpb)
+func TestSwitched100(t *testing.T) {
+	funcTest100(t, switched.ToStructpb100)
 }
 
-func BenchmarkToStructpbDefer(b *testing.B) {
-	funcBenchmark(b, oneofproto.ToStructpbDefer)
+func BenchmarkToStructpb100(b *testing.B) {
+	funcBenchmark100(b, oneofproto.ToStructpb)
 }
 
-func BenchmarkToStructpbUnsafe(b *testing.B) {
-	funcBenchmark(b, oneofproto.ToStructpbUnsafe)
+func BenchmarkToStructpbDefer100(b *testing.B) {
+	funcBenchmark100(b, oneofproto.ToStructpbDefer)
 }
 
-func BenchmarkSwitched(b *testing.B) {
-	funcBenchmark(b, switched.ToStructpb)
+func BenchmarkToStructpbUnsafe100(b *testing.B) {
+	funcBenchmark100(b, oneofproto.ToStructpbUnsafe)
+}
+
+func BenchmarkSwitched100(b *testing.B) {
+	funcBenchmark100(b, switched.ToStructpb100)
+}
+
+func BenchmarkToStructpb1(b *testing.B) {
+	funcBenchmark1(b, oneofproto.ToStructpb)
+}
+
+func BenchmarkToStructpbDefer1(b *testing.B) {
+	funcBenchmark1(b, oneofproto.ToStructpbDefer)
+}
+
+func BenchmarkToStructpbUnsafe1(b *testing.B) {
+	funcBenchmark1(b, oneofproto.ToStructpbUnsafe)
+}
+
+func BenchmarkSwitched1(b *testing.B) {
+	funcBenchmark1(b, switched.ToStructpb1)
 }
