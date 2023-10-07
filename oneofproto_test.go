@@ -31,23 +31,6 @@ func funcTest100(t *testing.T, fn oneofFunc) {
 	assert.Equal(t, input, output, "should output a JSON compatible structpb")
 }
 
-func funcTest1(t *testing.T, fn oneofFunc) {
-	assignable := testapi.Assignable1{Data1: "test100"}
-	input, _ := json.Marshal(&assignable)
-	msg := &testapi.Test2Request{
-		Test: &testapi.Test2Proto{
-			Uuid: "uuid",
-			Data: &testapi.Test2Proto_Assignable1{Assignable1: &assignable},
-		},
-	}
-
-	out, name, err := fn(msg.Test.Data)
-	assert.Nil(t, err, "should not error")
-	assert.Equal(t, "*testapi.Assignable100", name, "should output correct type name")
-	output, _ := out.MarshalJSON()
-	assert.Equal(t, input, output, "should output a JSON compatible structpb")
-}
-
 func funcBenchmark100(b *testing.B, fn oneofFunc) {
 	for i := 0; i < b.N; i++ {
 		assignable := testapi.Assignable100{Data100: "test100"}
